@@ -1,0 +1,9 @@
+apiVersion: v2
+name: calico
+description: A Helm chart for calico
+version: 1.0.0
+dependencies:
+  - name: calico
+    version: "3.27.2"
+    repository: "https://projectcalico.docs.tigera.io/charts"
+    condition: calico.enabled
