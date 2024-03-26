@@ -7,10 +7,6 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-  source:
-    repoURL: https://github.com/danielyaba/argocd-app-of-apps
-    targetRevision: HEAD
-    path: apps/grafana
   destination:
     namespace: grafana
     name: in-cluster
@@ -20,3 +16,9 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
+  source:
+    repoURL: https://github.com/danielyaba/argocd-app-of-apps
+    targetRevision: HEAD
+    path: apps/grafana
+    # helm:
+    #   values: |

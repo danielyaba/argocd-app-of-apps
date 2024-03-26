@@ -1,3 +1,4 @@
 ## PLACE YOUR VALUES UNDER external-secerts ###
+# Alternativly you can insert values directly in external-secrets.yaml under apps folder
 
 # external-secerts:
