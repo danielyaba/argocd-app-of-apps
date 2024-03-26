@@ -1,0 +1,9 @@
+apiVersion: v2
+name: ingress-nginx
+description: A Helm chart for ingress-nginx
+version: 1.0.0
+dependencies:
+  - name: ingress-nginx
+    version: "7.3.7"
+    repository: "https://ingress-nginx.github.io/helm-charts"
+    condition: ingress-nginx.enabled
