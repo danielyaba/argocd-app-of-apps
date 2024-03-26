@@ -1,5 +1,5 @@
 apiVersion: v2
-name: external-secrets
+name: grafana
 description: A Helm chart for external-secrets
 version: 1.0.0
 dependencies:

@@ -1,0 +1,20 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: {{ .Values.grafana.externalSecret.name }}
+  namespace: grafana
+spec:
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: {{ .Values.grafana.externalSecret.secretStoreRef.name }}
+  refreshInterval: "30s"
+  target:
+    name: {{ .Values.grafana.externalSecret.name }}
+    creationPolicy: Owner
+  data:
+    - secretKey: tls.crt
+      remoteRef:
+        key: grafana-ingress-cert
+    - secretKey: tls.key
+      remoteRef:
+        key: grafana-ingress-privkey
