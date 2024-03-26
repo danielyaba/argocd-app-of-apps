@@ -1,3 +1,4 @@
 ## PLACE YOUR VALUES UNDER ingress-nginx ###
+# Alternativly you can insert values directly in ingress-nginx.yaml under apps folder
 
 # ingress-nginx:
