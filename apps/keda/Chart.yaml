@@ -6,4 +6,4 @@ dependencies:
   - name: keda
     version: "2.13.2"
     repository: "https://kedacore.github.io/charts"
-    condition: external-secrets.enabled
+    condition: keda.enabled
