@@ -1,15 +1,16 @@
+{{- range $key, $value := .Values.devops-apps }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: keda
+  name: {{ $key }}
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   destination:
-    namespace: keda
-    name: in-cluster
+    namespace: {{ $key }}
+    name: {{ $value.destination.cluster }}
   syncPolicy:
     automated:
       selfHeal: true
@@ -17,8 +18,8 @@ spec:
     syncOptions:
       - CreateNamespace=true
   source:
-    repoURL: https://github.com/danielyaba/argocd-app-of-apps
+    repoURL: {{ $value.source.repoURL}}
     targetRevision: HEAD
-    path: apps/keda
-    # helm:
-    #   values: |
+    path: apps/{{ $value.source.path }}
+---
+{{- end }}

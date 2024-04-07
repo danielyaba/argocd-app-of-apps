@@ -7,7 +7,7 @@ spec:
     name: in-cluster
     namespace: argocd
   source:
-    path: apps
+    path: devops-apps-chart
     repoURL: "https://github.com/danielyaba/argocd-app-of-apps"
     targetRevision: HEAD
   project: default
