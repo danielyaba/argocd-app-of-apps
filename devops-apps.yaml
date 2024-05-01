@@ -8,7 +8,7 @@ spec:
     namespace: argocd
   source:
     path: devops-apps-chart
-    repoURL: "https://github.com/danielyaba/argocd-app-of-apps"
+    repoURL: https://source.developers.google.com/p/dgt-gcp-gtst-service-mesh/r/dgt-gcp-gtst-service-mesh
     targetRevision: HEAD
   project: default
   syncPolicy:

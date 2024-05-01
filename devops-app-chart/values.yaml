@@ -1,23 +1,15 @@
 devops-apps:
-
-  grafana:
-    destination: 
-      cluster: in-cluster
-    source:
-      repoURL: https://github.com/danielyaba/argocd-app-of-apps
-      path: apps/
-
   external-secrets:
     destination: 
       cluster: in-cluster
     source:
-      repoURL: https://github.com/danielyaba/argocd-app-of-apps
-      path: apps/
+      repoURL: https://source.developers.google.com/p/dgt-gcp-gtst-service-mesh/r/dgt-gcp-gtst-service-mesh
+      path: devops-apps
 
   external-dns:
     destination: 
       cluster: in-cluster
     source:
       repoURL: https://github.com/danielyaba/argocd-app-of-apps
-      path: apps/
+      path: devops-apps
 

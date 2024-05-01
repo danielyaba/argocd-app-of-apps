@@ -1,0 +1,9 @@
+apiVersion: v2
+name: external-dns
+description: A Helm chart for external-dns
+version: 1.0.0
+dependencies:
+  - name: external-dns
+    version: "1.14.3"
+    repository: "https://kubernetes-sigs.github.io/external-dns/"
+    condition: external-dns.enabled

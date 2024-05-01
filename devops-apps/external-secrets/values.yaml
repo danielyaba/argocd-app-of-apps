@@ -1,4 +1,19 @@
-## PLACE YOUR VALUES UNDER external-secerts ###
-# Alternativly you can insert values directly in external-secrets.yaml under apps folder
+external-secrets:
+  image:
+    repository: me-west1-docker.pkg.dev/dgt-gcp-gtst-service-mesh/external-secrets-images/external-secrets
 
-# external-secerts:
+  serviceAccount:
+    annotations:
+      iam.gke.io/gcp-service-account: gke-external-secrets-sa@dgt-gcp-gtst-service-mesh.iam.gserviceaccount.com
+
+  webhook:
+    image:
+      repository: me-west1-docker.pkg.dev/dgt-gcp-gtst-service-mesh/external-secrets-images/external-secrets
+
+  certController:
+    image:
+      repository: me-west1-docker.pkg.dev/dgt-gcp-gtst-service-mesh/external-secrets-images/external-secrets
+
+  clusterSecretStore:
+    name: gcp-store
+    projectId: dgt-gcp-gtst-service-mesh
