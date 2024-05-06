@@ -8,11 +8,10 @@ spec:
     namespace: argocd
   source:
     path: devops-apps-chart
-    repoURL: https://source.developers.google.com/p/dgt-gcp-gtst-service-mesh/r/dgt-gcp-gtst-service-mesh
+    repoURL: https://github.com/danielyaba/argocd-app-of-apps
     targetRevision: HEAD
   project: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-      allowEmpty: true
