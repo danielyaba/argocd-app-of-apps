@@ -1,4 +1,4 @@
-# ArgoCD-App-םf-Apps
+# ArgoCD-App-of-Apps
 Deploy Kubernetes Plugins with ArgoCD App-Of-Apps
 
 ### Preparations
