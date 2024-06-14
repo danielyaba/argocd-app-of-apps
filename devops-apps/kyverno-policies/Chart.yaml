@@ -1,0 +1,4 @@
+apiVersion: v2
+name: kyverno-policies
+description: A Helm chart for kyverno
+version: 1.0.0
