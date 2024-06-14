@@ -26,10 +26,10 @@ spec:
           - Pod
     preconditions:
       all:
-      - key: '{{request.object.metadata.annotations."inject-ca-certs" || ""}}'
+      - key: '{{`{[ request.object.metadata.annotations."inject-ca-certs" || "" }}`}}'
         operator: Equals
         value: enabled
-      - key: "{{request.operation || 'BACKGROUND'}}"
+      - key: "{{`{{ request.operation || 'BACKGROUND' }}`}}"
         operator: AnyIn
         value:
           - CREATE
@@ -40,7 +40,7 @@ spec:
         patchStrategicMerge:
           spec:
             containers:
-            - name: "{{ element.name }}"
+            - name: "{{`{{ element.name }}`}}"
               volumeMounts:
               - name: custom-ca-certificates
                 mountPath: /etc/ssl/certs/custom-ca-certificates.crt

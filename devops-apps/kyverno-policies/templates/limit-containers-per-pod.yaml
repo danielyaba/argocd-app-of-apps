@@ -25,7 +25,7 @@ spec:
           - Pod
     preconditions:
       all:
-      - key: "{{request.operation || 'BACKGROUND'}}"
+      - key: "{{`{{ request.operation || 'BACKGROUND' }}`}}"
         operator: AnyIn
         value: 
         - CREATE
@@ -35,6 +35,6 @@ spec:
       deny:
         conditions:
           any:
-          - key: "{{request.object.spec.containers[] | length(@)}}"
+          - key: "{{`{{ request.object.spec.containers[] | length(@) }}`}}"
             operator: GreaterThan
             value: "4"
