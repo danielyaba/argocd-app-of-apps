@@ -3,7 +3,7 @@ kind: ClusterPolicy
 metadata:
   name: check-resource-limits
 spec:
-  validationFailureAction: audit
+  validationFailureAction: enforce
   rules:
   - name: validate-resource-limits
     match:
