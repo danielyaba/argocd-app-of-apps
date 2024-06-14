@@ -17,9 +17,16 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
+      {{- if $value.serverSideApply }}
+      - ServerSideApply=true
+      {{- end }}
   source:
     repoURL: {{ $value.source.repoURL}}
     targetRevision: HEAD
     path: devops-apps/{{ $key }}
+  {{- with $value.ignoreDependencies }}
+  ignoreDifferences:
+  {{ toYaml . | nindent 4 }}
+  {{- end }}
 ---
 {{- end }}
