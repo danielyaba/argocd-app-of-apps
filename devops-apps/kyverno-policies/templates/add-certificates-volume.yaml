@@ -25,25 +25,27 @@ spec:
         - Pod
     preconditions:
       all:
-      - key: "{{`'{{request.object.metadata.annotations."inject-certs"}}'`}}"
+      - key: "{{`{{request.object.metadata.annotations.\"inject-certs\"}}`}}"
         operator: Equals
         value: enabled
-      - key: "{{request.operation || 'BACKGROUND'}}"
+      - key: "{{`{{request.operation || 'BACKGROUND'}}`}}"
         operator: AnyIn
         value:
           - CREATE
           - UPDATE
     mutate:
       foreach:
-      - list: "request.object.spec.containers"
+      - list: "{{`{{request.object.spec.containers}}`}}"
         patchStrategicMerge:
           spec:
             containers:
-            - name: "{{ element.name }}"
+            - name: "{{`{{element.name}}`}}"
               volumeMounts:
-              - name: etc-ssl-certs
-                mountPath: /etc/ssl/certs
+              - name: custom-ca-certificates
+                mountPath: /etc/ssl/certs/custom-ca-certificates.crt
+                subPath: custom-ca-certificates.crt
             volumes:
-            - name: etc-ssl-certs
-              configMap:
-                name: ca-pemstore
+            - name: custom-ca-certificates
+              secret:
+                defaultMode: 420
+                secretName: custom-ca-certificates
