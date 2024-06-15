@@ -6,7 +6,7 @@ metadata:
     policies.kyverno.io/title: Add Certificates as a Volume
     policies.kyverno.io/category: Sample
     policies.kyverno.io/subject: Pod,Volume
-    kyverno.io/kyverno-version: 1.6.0
+    kyverno.io/kyverno-version: 1.5.2
     kyverno.io/kubernetes-version: "1.21"
     policies.kyverno.io/minversion: 1.5.0
     pod-policies.kyverno.io/autogen-controllers: DaemonSet,Deployment,Job,StatefulSet
@@ -20,16 +20,15 @@ spec:
   rules:
   - name: add-ssl-certs
     match:
-      any:
-      - resources:
-          kinds:
-          - Pod
+      resources:
+        kinds:
+        - Pod
     preconditions:
       all:
-      - key: '{{`{[ request.object.metadata.annotations."inject-ca-certs" || "" }}`}}'
+      - key: "{{`'{{request.object.metadata.annotations."inject-certs"}}'`}}"
         operator: Equals
         value: enabled
-      - key: "{{`{{ request.operation || 'BACKGROUND' }}`}}"
+      - key: "{{request.operation || 'BACKGROUND'}}"
         operator: AnyIn
         value:
           - CREATE
@@ -40,13 +39,11 @@ spec:
         patchStrategicMerge:
           spec:
             containers:
-            - name: "{{`{{ element.name }}`}}"
+            - name: "{{ element.name }}"
               volumeMounts:
-              - name: custom-ca-certificates
-                mountPath: /etc/ssl/certs/custom-ca-certificates.crt
-                subPath: custom-ca-certificates.crt
+              - name: etc-ssl-certs
+                mountPath: /etc/ssl/certs
             volumes:
-            - name: custom-ca-certificates
-              secret:
-                secretName: custom-ca-certificates
-                defaultMode: 420
+            - name: etc-ssl-certs
+              configMap:
+                name: ca-pemstore
