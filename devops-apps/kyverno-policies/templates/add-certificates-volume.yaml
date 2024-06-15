@@ -35,7 +35,7 @@ spec:
           - UPDATE
     mutate:
       foreach:
-      - list: "{{`{{request.object.spec.containers}}`}}"
+      - list: "request.object.spec.containers"
         patchStrategicMerge:
           spec:
             containers:
