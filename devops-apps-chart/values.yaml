@@ -1,9 +1,9 @@
 devops-apps:
-  external-secrets:
-    destination:
-      cluster: in-cluster
-    source:
-      repoURL: https://github.com/danielyaba/argocd-app-of-apps
+  # external-secrets:
+  #   destination:
+  #     cluster: in-cluster
+  #   source:
+  #     repoURL: https://github.com/danielyaba/argocd-app-of-apps
 
   # external-dns:
   #   destination:
