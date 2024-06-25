@@ -11,15 +11,25 @@ devops-apps:
   #   source:
   #     repoURL: https://github.com/danielyaba/argocd-app-of-apps
 
-  kyverno:
-    destination: 
-      cluster: in-cluster
-    source:
-      repoURL: https://github.com/danielyaba/argocd-app-of-apps
-    serverSideApply: true
+  # kyverno:
+  #   destination: 
+  #     cluster: in-cluster
+  #   source:
+  #     repoURL: https://github.com/danielyaba/argocd-app-of-apps
+  #   serverSideApply: true
 
-  kyverno-policies:
+  # kyverno-policies:
+  #   destination:
+  #     cluster: in-cluster
+  #   source:
+  #     repoURL: https://github.com/danielyaba/argocd-app-of-apps
+
+  # backstage:
+  #   destination:
+  #     cluster: in-cluster
+  #   source: https://cloudnative-pg.github.io/charts
+
+  reflector:
     destination:
       cluster: in-cluster
-    source:
-      repoURL: https://github.com/danielyaba/argocd-app-of-apps
+    source: https://emberstack.github.io/helm-charts

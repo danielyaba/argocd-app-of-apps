@@ -1,0 +1,9 @@
+apiVersion: v2
+name: reflector
+description: A Helm chart for reflector
+version: 7.1.262
+dependencies:
+  - name: reflector
+    version: 7.1.262
+    repository: https://emberstack.github.io/helm-charts
+    condition: reflector.enabled
