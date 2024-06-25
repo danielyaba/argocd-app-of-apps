@@ -24,7 +24,7 @@ devops-apps:
     source:
       repoURL: https://github.com/danielyaba/argocd-app-of-apps
 
-  # backstage:
+  # cloudnativ-pg:
   #   destination:
   #     cluster: in-cluster
   #   source: 

@@ -1,9 +1,9 @@
 apiVersion: v2
-name: backstage
+name: cloudnativ-pg
 description: A Helm chart for backstage
-version: 0.1.0
+version: 0.21.5
 dependencies:
-  - name: backstage
-    version: 0.1.0
+  - name: cloudnative-pg
+    version: 0.21.5
     repository: https://cloudnative-pg.github.io/charts
-    condition: backstage.enabled
+    condition: cloudnative-pg.enabled
