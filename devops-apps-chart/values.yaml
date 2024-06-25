@@ -27,9 +27,9 @@ devops-apps:
   # backstage:
   #   destination:
   #     cluster: in-cluster
-  #   source: https://cloudnative-pg.github.io/charts
+  #   source: https://github.com/danielyaba/argocd-app-of-apps
 
   reflector:
     destination:
       cluster: in-cluster
-    source: https://emberstack.github.io/helm-charts
+    source: https://github.com/danielyaba/argocd-app-of-apps
