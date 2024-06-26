@@ -9,8 +9,8 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: {{ $key }}
     name: {{ $value.destination.cluster }}
+    namespace: {{ default $key $value.destination.namespace }}
   syncPolicy:
     automated:
       selfHeal: true
