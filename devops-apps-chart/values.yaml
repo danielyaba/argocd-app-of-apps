@@ -24,12 +24,12 @@ devops-apps:
     source:
       repoURL: https://github.com/danielyaba/argocd-app-of-apps
 
-  # cloudnative-pg:
-  #   destination:
-  #     cluster: in-cluster
-  #     namespace: backstage
-  #   source: 
-  #     repoURL: https://github.com/danielyaba/argocd-app-of-apps
+  cloudnative-pg:
+    destination:
+      cluster: in-cluster
+      # namespace: backstage
+    source: 
+      repoURL: https://github.com/danielyaba/argocd-app-of-apps
 
   reflector:
     destination:
