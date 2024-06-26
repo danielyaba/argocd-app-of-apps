@@ -24,11 +24,11 @@ devops-apps:
     source:
       repoURL: https://github.com/danielyaba/argocd-app-of-apps
 
-  # cloudnativ-pg:
-  #   destination:
-  #     cluster: in-cluster
-  #   source: 
-  #     repoURL: https://github.com/danielyaba/argocd-app-of-apps
+  cloudnativ-pg:
+    destination:
+      cluster: in-cluster
+    source: 
+      repoURL: https://github.com/danielyaba/argocd-app-of-apps
 
   reflector:
     destination:
