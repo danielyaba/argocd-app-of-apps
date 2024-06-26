@@ -1,0 +1,8 @@
+external-apps:
+  cloudnative-pg:
+    destination:
+      cluster: in-cluster
+      # namespace: backstage
+    source: 
+      repoURL: https://github.com/danielyaba/argocd-app-of-apps
+    serverSideApply: true

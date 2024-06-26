@@ -1,0 +1,4 @@
+apiVersion: v2
+name: external-apps
+description: A Helm chart for external-apps
+version: 1.0.0
