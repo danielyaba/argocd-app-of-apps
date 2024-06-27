@@ -23,7 +23,7 @@ spec:
   source:
     repoURL: {{ $value.source.repoURL}}
     targetRevision: HEAD
-    path: devops-apps/{{ $key }}
+    path: external-apps/{{ $key }}
   {{- with $value.ignoreDependencies }}
   ignoreDifferences:
   {{ toYaml . | nindent 4 }}
