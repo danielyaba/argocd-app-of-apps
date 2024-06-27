@@ -1,0 +1,2 @@
+github:
+  accessToken: ${GH_TOKEN}
