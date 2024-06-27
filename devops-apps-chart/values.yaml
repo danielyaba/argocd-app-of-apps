@@ -29,3 +29,9 @@ devops-apps:
       cluster: in-cluster
     source: 
       repoURL: https://github.com/danielyaba/argocd-app-of-apps
+
+  sealed-secrets:
+    destination:
+      cluster: in-cluster
+    source: 
+      repoURL: https://github.com/danielyaba/argocd-app-of-apps
