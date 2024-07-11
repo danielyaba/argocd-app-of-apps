@@ -1,2 +1,2 @@
-github:
-  accessToken: ${GH_TOKEN}
+# github:
+#   accessToken: ${GH_TOKEN}
