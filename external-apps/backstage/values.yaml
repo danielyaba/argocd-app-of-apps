@@ -1,2 +1,6 @@
 # github:
 #   accessToken: ${GH_TOKEN}
+backstage:
+  backstage:
+    image:
+      tag: 1.9.5
