@@ -6,8 +6,8 @@ external-apps:
       repoURL: https://github.com/danielyaba/argocd-app-of-apps
     serverSideApply: true
 
-  backstage:
-    destination:
-      cluster: in-cluster
-    source:
-      repoURL: https://github.com/danielyaba/argocd-app-of-apps
+  # backstage:
+  #   destination:
+  #     cluster: in-cluster
+  #   source:
+  #     repoURL: https://github.com/danielyaba/argocd-app-of-apps
