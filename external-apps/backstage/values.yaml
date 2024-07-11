@@ -1,6 +1,3 @@
-# github:
-#   accessToken: ${GH_TOKEN}
-backstage:
-  backstage:
-    image:
-      tag: 1.28.4
+# backstage:
+  # github:
+  #   access_token: ${GITHUB_TOKEN}
