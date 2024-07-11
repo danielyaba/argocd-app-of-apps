@@ -3,4 +3,4 @@
 backstage:
   backstage:
     image:
-      tag: 1.9.5
+      tag: 1.28.4
