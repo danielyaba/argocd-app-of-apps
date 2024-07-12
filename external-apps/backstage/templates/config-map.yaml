@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: extra-app-config
+  namespace: {{ .Release.Namespace | quote }}
+data:
+  app-config.extra.yaml: |
+    integrations:
+      github:
+        - host: github.com
+          token: ${GH_TOKEN}

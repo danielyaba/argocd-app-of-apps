@@ -1,3 +1,14 @@
-# backstage:
-  # github:
-  #   access_token: ${GITHUB_TOKEN}
+backstage:
+  backstage:
+    image:
+      tag: 1.28.4
+    
+    extraAppConfig:
+      - filename: app-config.extra.yaml
+        configMapRef: extra-app-config
+
+    extraEnvVarsSecrets:
+      - backstage-secrets
+
+    postgresql:
+      enabled: true

@@ -1,10 +1,10 @@
 apiVersion: v2
 name: backstage
 description: A Helm chart for backstage
-version: 0.1.0
-appVersion: 1.16.0
+version: 1.9.5
+appVersion: 1.28.4
 dependencies:
   - name: backstage
-    version: 0.1.0
-    repository: http://helm.platformers.community/
+    version: 1.9.5
+    repository: https://backstage.github.io/charts
     condition: backstage.enabled
