@@ -5,13 +5,16 @@ metadata:
   namespace: {{ .Release.Namespace | quote }}
 data:
   app-config.extra.yaml: |
-    # app:
-    #   title: Landing-Zone Backstage App
+    app:
+      title: Landing-Zone Backstage App
+      baseUrl: http://localhost:7007
       
-    # organization: 
-    #   name: digital.gov.il
+    organization: 
+      name: digital.gov.il
 
     backend:
+      baseUrl: http://localhost:7007
+      listen: ':7007'
       database:
         client: pg
         connection:
@@ -20,8 +23,25 @@ data:
           user: ${POSTGRES_USER}
           password: ${POSTGRES_PASSWORD}
 
-    # integrations:
-    #   github:
-    #     - host: github.com
-    #       token: ${GITHUB_TOKEN}
+    integrations:
+      github:
+        - host: github.com
+          token: ${GITHUB_TOKEN}
+    
+    auth:
+      providers:
+        guest: {}
 
+    scaffolder:
+
+    techdocs:
+      builder: 'local'
+    generator:
+      runIn: 'local'
+    publisher:
+      type: 'local'
+
+    catalog:
+      locations: []
+
+    
