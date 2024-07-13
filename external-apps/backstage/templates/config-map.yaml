@@ -9,7 +9,7 @@ data:
       title: Landing-Zone Backstage App
       
     organization: 
-      name: Landing-Zone
+      name: digital.gov.il
 
     backend:
       database:

@@ -3,9 +3,9 @@ backstage:
   #   image:
   #     tag: 1.28.4
     
-    extraAppConfig:
-      - filename: app-config.extra.yaml
-        configMapRef: extra-app-config
+    # extraAppConfig:
+    #   - filename: app-config.extra.yaml
+    #     configMapRef: extra-app-config
 
     extraEnvVarsSecrets:
       - backstage-secrets
