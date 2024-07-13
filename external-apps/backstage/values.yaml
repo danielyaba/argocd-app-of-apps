@@ -9,3 +9,9 @@ backstage:
 
     extraEnvVarsSecrets:
       - backstage-secrets
+
+    extraEnvVars:
+      - name: POSTGRES_HOST
+        value: backstage-rw
+      - name: POSTGRES_PORT
+        value: "5432"
