@@ -5,7 +5,23 @@ metadata:
   namespace: {{ .Release.Namespace | quote }}
 data:
   app-config.extra.yaml: |
-    integrations:
-      github:
-        - host: github.com
-          token: ${GH_TOKEN}
+    app:
+      title: Landing-Zone Backstage App
+      
+      organization: 
+        name: Landing-Zone
+
+      backend:
+        database:
+          client: pg
+          connection:
+            host: ${POSTGRES_HOST}
+            port: ${POSTGRES_PORT}
+            user: ${POSTGRES_USER}
+            password: ${POSTGRES_PASSWORD}
+
+      integrations:
+        github:
+          - host: github.com
+            token: ${GITHUB_TOKEN}
+
