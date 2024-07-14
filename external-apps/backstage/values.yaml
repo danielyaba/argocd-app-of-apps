@@ -18,8 +18,13 @@ backstage:
 
     initContainers:
       - name: init-sleep
-        image: busybox
-        command: ["sh", "-c", "sleep 1000000"]
+        image: alpine:latest
+        command: 
+          - "/bin/bash"
+          - "-c"
+          - |
+            apk update && \
+            apk add --no-cache postgresql-client
         volumeMounts:
         - mountPath: /app/app-config.extra.yaml
           name: extra-app-config
