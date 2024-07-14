@@ -1,9 +1,18 @@
 backstage:
   backstage:
-    image:
-      registry: danielyaba
-      repository: backstage
-      tag: 1.0.0
+
+    resources:
+      requests:
+        memory: 512Mi
+        cpu: 500m
+      limits:
+        memory: 1Gi
+        cpu: 1
+
+    # image:
+    #   registry: danielyaba
+    #   repository: backstage
+    #   tag: 1.0.0
     
     # extraAppConfig:
     #   - filename: app-config.extra.yaml
