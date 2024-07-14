@@ -16,25 +16,25 @@ backstage:
       - name: POSTGRES_PORT
         value: "5432"
 
-    initContainers:
-      - name: init-sleep
-        image: alpine:latest
-        command: 
-          - "/bin/sh"
-          - "-c"
-          - |
-            apk update && \
-            apk add --no-cache postgresql-client && \
-            sleep 1000000
-        volumeMounts:
-        - mountPath: /app/app-config.extra.yaml
-          name: extra-app-config
-          subPath: app-config.extra.yaml
-        env:
-          - name: POSTGRES_HOST
-            value: backstage-rw
-          - name: POSTGRES_PORT
-            value: "5432"
-        envFrom:
-        - secretRef:
-            name: backstage-secrets
+    # initContainers:
+    #   - name: init-sleep
+    #     image: alpine:latest
+    #     command: 
+    #       - "/bin/sh"
+    #       - "-c"
+    #       - |
+    #         apk update && \
+    #         apk add --no-cache postgresql-client && \
+    #         sleep 1000000
+    #     volumeMounts:
+    #     - mountPath: /app/app-config.extra.yaml
+    #       name: extra-app-config
+    #       subPath: app-config.extra.yaml
+    #     env:
+    #       - name: POSTGRES_HOST
+    #         value: backstage-rw
+    #       - name: POSTGRES_PORT
+    #         value: "5432"
+    #     envFrom:
+    #     - secretRef:
+    #         name: backstage-secrets
