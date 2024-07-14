@@ -20,3 +20,15 @@ backstage:
       - name: init-sleep
         image: busybox
         command: ["sh", "-c", "sleep 1000000"]
+        volumeMounts:
+        - mountPath: /app/app-config.extra.yaml
+          name: extra-app-config
+          subPath: app-config.extra.yaml
+        env:
+          - name: POSTGRES_HOST
+            value: backstage-rw
+          - name: POSTGRES_PORT
+            value: "5432"
+        envFrom:
+        - secretRef:
+            name: backstage-secrets
