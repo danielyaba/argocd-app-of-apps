@@ -24,7 +24,8 @@ backstage:
           - "-c"
           - |
             apk update && \
-            apk add --no-cache postgresql-client
+            apk add --no-cache postgresql-client && \
+            sleep 1000000
         volumeMounts:
         - mountPath: /app/app-config.extra.yaml
           name: extra-app-config
