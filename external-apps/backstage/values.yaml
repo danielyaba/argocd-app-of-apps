@@ -20,7 +20,7 @@ backstage:
       - name: init-sleep
         image: alpine:latest
         command: 
-          - "/bin/bash"
+          - "/bin/sh"
           - "-c"
           - |
             apk update && \
