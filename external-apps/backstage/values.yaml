@@ -8,11 +8,14 @@ backstage:
       limits:
         memory: 1Gi
         cpu: 1
+    
+    diagnosticMode:
+      enabled: true
 
-    # image:
-    #   registry: danielyaba
-    #   repository: backstage
-    #   tag: 1.0.0
+    image:
+      registry: danielyaba
+      repository: backstage
+      tag: 1.0.0
     
     # extraAppConfig:
     #   - filename: app-config.extra.yaml
@@ -33,7 +36,7 @@ backstage:
         baseUrl: http://localhost:7007
         
       organization: 
-        name: digital.gov.il
+        name: Landing-Zone
 
       backend:
         baseUrl: http://localhost:7007
