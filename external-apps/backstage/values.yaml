@@ -9,9 +9,6 @@ backstage:
         memory: 1Gi
         cpu: 1
     
-    diagnosticMode:
-      enabled: true
-
     image:
       registry: danielyaba
       repository: backstage
