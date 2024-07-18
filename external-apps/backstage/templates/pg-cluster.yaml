@@ -3,7 +3,7 @@ kind: Secret
 type: kubernetes.io/basic-auth
 metadata:
   name: app-secret
-  namespace: backstage
+  namespace: {{ .Release.Namespace | quote }}
 data:
   username: YXBw
   password: cGFzc3dvcmQ=
@@ -12,7 +12,7 @@ apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
   name: backstage
-  namespace: backstage
+  namespace: {{ .Release.Namespace | quote }}
 spec:
   instances: 1
   primaryUpdateStrategy: unsupervised
