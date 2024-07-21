@@ -29,11 +29,11 @@ backstage:
 
     appConfig:
       app:
-        title: Landing-Zone Backstage App
+        title: Daniel Yaba Backstage App
         baseUrl: http://localhost:7007
         
       organization: 
-        name: Landing-Zone
+        name: Daniel Yaba
 
       backend:
         baseUrl: http://localhost:7007
