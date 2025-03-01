@@ -1,15 +1,15 @@
 devops-apps:
-  # external-secrets:
-  #   destination:
-  #     cluster: in-cluster
-  #   source:
-  #     repoURL: https://github.com/danielyaba/argocd-app-of-apps
+  external-secrets:
+    destination:
+      cluster: in-cluster
+    source:
+      repoURL: https://github.com/danielyaba/argocd-app-of-apps
 
-  # external-dns:
-  #   destination:
-  #     cluster: in-cluster
-  #   source:
-  #     repoURL: https://github.com/danielyaba/argocd-app-of-apps
+  external-dns:
+    destination:
+      cluster: in-cluster
+    source:
+      repoURL: https://github.com/danielyaba/argocd-app-of-apps
 
   kyverno:
     destination: 
@@ -34,4 +34,22 @@ devops-apps:
     destination:
       cluster: in-cluster
     source: 
+      repoURL: https://github.com/danielyaba/argocd-app-of-apps
+
+  cert-manager:
+    destination:
+      cluster: in-cluster
+    source:
+      repoURL: https://github.com/danielyaba/argocd-app-of-apps
+
+  grafana:
+    destination:
+      cluster: in-cluster
+    source:
+      repoURL: https://github.com/danielyaba/argocd-app-of-apps
+
+  loki:
+    destination:
+      cluster: in-cluster
+    source:
       repoURL: https://github.com/danielyaba/argocd-app-of-apps
