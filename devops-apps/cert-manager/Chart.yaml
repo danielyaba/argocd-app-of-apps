@@ -1,0 +1,9 @@
+apiVersion: v2
+name: cert-manager
+description: A Helm chart for cert-manager
+version: 1.17.1
+dependencies:
+  - name: cert-manager
+    version: 1.17.1
+    repository: https://kyverno.github.io/kyverno
+    condition: cert-manager.enabled
