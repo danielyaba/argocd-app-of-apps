@@ -1,6 +1,6 @@
 backstage:
-  backstage:
 
+  backstage:
     resources:
       requests:
         memory: 512Mi
@@ -14,10 +14,6 @@ backstage:
       repository: backstage
       tag: 0.1.0
     
-    # extraAppConfig:
-    #   - filename: app-config.extra.yaml
-    #     configMapRef: extra-app-config
-
     extraEnvVarsSecrets:
       - backstage-secrets
 
@@ -38,7 +34,6 @@ backstage:
       backend:
         baseUrl: http://localhost:7007
         listen:
-          host: localhost
           port: 7007
         database:
           client: pg
