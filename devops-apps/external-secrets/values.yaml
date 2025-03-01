@@ -1,0 +1,14 @@
+external-secrets:
+  serviceAccount:
+    annotations:
+      iam.gke.io/gcp-service-account: external-secrets@my-project.iam.gserviceaccount.com
+      eks.amazonaws.com/role-arn: arn:aws:iam::123456789012:role/iam-role
+  secretStore:
+    gcp:
+      enabled: true
+      projectId: my-project
+    aws:
+      enabled: true
+      role: iam-role
+      region: eu-central-1
+      namespace: my-namespace
